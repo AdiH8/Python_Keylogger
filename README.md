@@ -1,16 +1,27 @@
-The code is a Python script that uses the pynput library to listen to keyboard inputs and record them in a log file.
+# Keylogger
+This is a Python program that logs every keystroke on the keyboard and saves it to a log file. The program uses the pynput library to monitor and record the keystrokes.
 
-First, the necessary modules are imported from the pynput library, including Key and Listener. Additionally, the logging module is imported.
+## Prerequisites
+This program requires Python 3 and the pynput library to be installed on your system. You can install the pynput library using pip by running the following command:
 
-The log_dir variable is initialized as an empty string. This variable will later be used to define the directory where the log file will be created.
+```bash
+pip install pynput
+```
+## How to use
+Download the keylogger.py file and save it in your desired directory.
 
-The basicConfig() method from the logging module is called with three parameters:
+Open a command prompt or terminal and navigate to the directory where keylogger.py is saved.
 
-filename: the path where the log file will be created. In this case, the path is log_dir + "keyLog.txt".
-level: the level of severity for the log messages. In this case, it is set to logging.DEBUG, which means that all log messages with a severity level of DEBUG or higher will be recorded in the log file.
-format: the format of the log messages. In this case, it is set to '%(asctime)s: %(message)s', which means that each log message will include a timestamp and the text of the pressed key.
-The on_press() function is defined with a single parameter, key. This function is called every time a key is pressed, and it records the key press in the log file using the logging.info() method.
+Run the program by executing the command:
 
-Finally, a Listener object is created with on_press as the callback function for when a key is pressed. The join() method is called on the listener object, which means that the script will listen for keyboard inputs until the program is terminated.
+```bash
+python keylogger.py
+```
+The program will start running and will record every keystroke on the keyboard.
 
-In summary, the code listens for keyboard inputs, records each key press in a log file, and continues to listen until the program is terminated.
+The log file will be saved in the same directory as keylogger.py with the name keyLog.txt.
+
+To stop the program, press Ctrl + C in the command prompt or terminal.
+
+## Security Considerations
+This program can be used for both legal and illegal purposes. While it can be used to monitor the activity of children or employees, it can also be used to steal sensitive information such as passwords and credit card numbers. As such, it is important to use this program responsibly and only on systems that you have the legal authority to monitor. Additionally, it is recommended to use antivirus software and a firewall to prevent the log file from being transmitted to an unauthorized person.
